@@ -11,7 +11,7 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
+            OwnerId
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Id)
@@ -29,10 +29,10 @@
             @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NeighborhoodId)
+            Neighborhood
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NeighborhoodId)
+            @Html.DisplayFor(model => model.Neighborhood.Name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Phone)
@@ -42,6 +42,39 @@
         </dd>
     </dl>
 </div>
+<table class = "table">
+    <thead>
+        <tr>
+            <th>DogId</th>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Notes</th>
+            <th>Avatar</th>
+        </tr>
+    </thead>
+<tbody>
+    @foreach (Dog dog in Model.Dogs)
+    {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => dog.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => dog.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => dog.Breed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => dog.Notes)
+                </td>
+                <td>
+                    <img src="@dog.ImageUrl" alt="avatar" />
+                </td>
+            </tr>
+    }
+</tbody>
+</table>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     <a asp-action="Index">Back to List</a>
