@@ -42,39 +42,43 @@
         </dd>
     </dl>
 </div>
-<table class = "table">
-    <thead>
-        <tr>
-            <th>DogId</th>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Notes</th>
-            <th>Avatar</th>
-        </tr>
-    </thead>
-<tbody>
-    @foreach (Dog dog in Model.Dogs)
-    {
+<div>
+    <h4>Dogs</h4>
+    <hr />
+    <table class = "table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => dog.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => dog.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => dog.Breed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => dog.Notes)
-                </td>
-                <td>
-                    <img src="@dog.ImageUrl" alt="avatar" />
-                </td>
+                <th>DogId</th>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Notes</th>
+                <th>Avatar</th>
             </tr>
-    }
-</tbody>
-</table>
+        </thead>
+    <tbody>
+        @foreach (Dog dog in Model.Dogs)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => dog.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => dog.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => dog.Breed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => dog.Notes)
+                    </td>
+                    <td>
+                        <img src="@dog.ImageUrl" alt="no image" />
+                    </td>
+                </tr>
+        }
+    </tbody>
+    </table>
+</div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     <a asp-action="Index">Back to List</a>

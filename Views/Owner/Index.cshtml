@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NeighborhoodId)
+                Neighborhood
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
@@ -44,7 +44,7 @@
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NeighborhoodId)
+                    @Html.DisplayFor(modelItem => item.Neighborhood.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Phone)

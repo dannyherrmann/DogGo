@@ -16,13 +16,15 @@ namespace DogGo.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                    select  Id, 
-                            Email, 
-                            [Name], 
-                            Address, 
-                            NeighborhoodId, 
-                            Phone
-                    FROM Owner";
+                    select  o.Id as OwnerId,
+                            o.Email as OwnerEmail,
+                            o.[Name] as OwnerName,
+                            o.Address as OwnerAddress,
+                            o.Phone as OwnerPhone,
+                            n.Id as NeighborhoodId,
+                            n.Name as NeighborhoodName
+                    FROM Owner o
+                    JOIN Neighborhood n on o.NeighborhoodId = n.Id";
 
                     var reader = cmd.ExecuteReader();
 
@@ -31,12 +33,16 @@ namespace DogGo.Repositories
                     {
                         Owner owner = new Owner
                         {
-                            Id = DbUtils.GetInt(reader, "Id"),
-                            Email = DbUtils.GetString(reader, "Email"),
-                            Name = DbUtils.GetString(reader, "Name"),
-                            Address = DbUtils.GetString(reader, "Address"),
-                            NeighborhoodId = DbUtils.GetInt(reader, "NeighborhoodId"),
-                            Phone = DbUtils.GetString(reader, "Phone")
+                            Id = DbUtils.GetInt(reader, "OwnerId"),
+                            Email = DbUtils.GetString(reader, "OwnerEmail"),
+                            Name = DbUtils.GetString(reader, "OwnerName"),
+                            Address = DbUtils.GetString(reader, "OwnerAddress"),
+                            Phone = DbUtils.GetString(reader, "OwnerPhone"),
+                            Neighborhood = new Neighborhood 
+                            {
+                                Id = DbUtils.GetInt(reader, "NeighborhoodId"),
+                                Name = DbUtils.GetString(reader, "NeighborhoodName")
+                            }
                         };
 
                         owners.Add(owner);
