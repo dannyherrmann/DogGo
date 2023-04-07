@@ -24,8 +24,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/dannymagic/workspace/DogGo/Views/Owner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/dannymagic/workspace/DogGo/Views/Owner/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/dannymagic/workspace/DogGo/Views/Owner/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/dannymagic/workspace/DogGo/Views/Owner/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/dannymagic/workspace/DogGo/Views/Owner/Index.cshtml]
