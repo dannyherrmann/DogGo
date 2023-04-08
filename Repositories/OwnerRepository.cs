@@ -76,7 +76,7 @@ namespace DogGo.Repositories
                             d.ImageUrl as DogAvatar,
                             d.Notes as DogNotes
                     FROM Owner o
-                    JOIN Dog d on o.Id = d.OwnerId
+                    LEFT JOIN Dog d on o.Id = d.OwnerId
                     JOIN Neighborhood n on o.NeighborhoodId = n.Id
                     WHERE o.Id = @Id";
 
@@ -107,12 +107,12 @@ namespace DogGo.Repositories
                             };
                         }
                         
-                        int dogId = DbUtils.GetInt(reader, "DogId");
+                        int? dogId = DbUtils.GetNullableInt(reader, "DogId");
                         if (dogId != null)
                         {
                             owner.Dogs.Add(new Dog()
                             {
-                                Id = dogId,
+                                Id = (int)dogId,
                                 Name = DbUtils.GetString(reader, "DogName"),
                                 Breed = DbUtils.GetString(reader, "DogBreed"),
                                 ImageUrl = DbUtils.GetString(reader, "DogAvatar"),
