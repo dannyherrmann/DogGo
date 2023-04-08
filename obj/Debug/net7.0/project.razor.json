@@ -18670,6 +18670,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Walker/Delete.cshtml",
+      "TargetPath": "Views\\Walker\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/dannymagic/workspace/DogGo/Views/Owner/Details.cshtml",
       "TargetPath": "Views\\Owner\\Details.cshtml",
       "FileKind": "mvc"
@@ -18677,6 +18682,16 @@
     {
       "FilePath": "/home/dannymagic/workspace/DogGo/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Dogs/Index.cshtml",
+      "TargetPath": "Views\\Dogs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Walker/Create.cshtml",
+      "TargetPath": "Views\\Walker\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18690,6 +18705,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Walker/Edit.cshtml",
+      "TargetPath": "Views\\Walker\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Dogs/Edit.cshtml",
+      "TargetPath": "Views\\Dogs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/dannymagic/workspace/DogGo/Views/Walker/Details.cshtml",
       "TargetPath": "Views\\Walker\\Details.cshtml",
       "FileKind": "mvc"
@@ -18697,6 +18722,16 @@
     {
       "FilePath": "/home/dannymagic/workspace/DogGo/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Dogs/Create.cshtml",
+      "TargetPath": "Views\\Dogs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Dogs/Delete.cshtml",
+      "TargetPath": "Views\\Dogs\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18712,6 +18747,11 @@
     {
       "FilePath": "/home/dannymagic/workspace/DogGo/Views/Owner/Delete.cshtml",
       "TargetPath": "Views\\Owner\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/dannymagic/workspace/DogGo/Views/Dogs/Details.cshtml",
+      "TargetPath": "Views\\Dogs\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],

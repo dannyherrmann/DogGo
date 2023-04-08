@@ -19,7 +19,6 @@ namespace DogGo.Controllers
             return View(owners);
         }
 
-        // details does not work if owner has no dogs yet
         public ActionResult Details(int id)
         {
             Owner owner = _ownerRepo.GetOwnerById(id);
@@ -52,7 +51,6 @@ namespace DogGo.Controllers
             }
         }
 
-        // Delete does not work if owner does not have any dogs yet
         public ActionResult Delete(int id)
         {
             Owner owner = _ownerRepo.GetOwnerById(id);
@@ -76,7 +74,6 @@ namespace DogGo.Controllers
             }
         }
 
-        // Edit does not work if owner does not have any dogs yet
         public ActionResult Edit(int id)
         {
             Owner owner = _ownerRepo.GetOwnerById(id);

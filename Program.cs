@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IWalkerRepository, WalkerRepository>();
 builder.Services.AddTransient<IOwnerRepository, OwnerRepository>();
+builder.Services.AddTransient<IDogRepository, DogRepository>();
 
 var app = builder.Build();
 
@@ -26,6 +27,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Walker}/{action=Index}/{id?}");
 
 app.Run();

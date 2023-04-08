@@ -30,5 +30,76 @@ namespace DogGo.Controllers
 
             return View(walker);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Walker walker)
+        {
+            try
+            {
+                _walkerRepo.AddWalker(walker);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(walker);
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Walker walker = _walkerRepo.GetWalkerById(id);
+
+            return View(walker);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Walker walker)
+        {
+            try
+            {
+                _walkerRepo.DeleteWalker(walker.Id);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(walker);
+            }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            Walker walker = _walkerRepo.GetWalkerById(id);
+
+            if (walker == null)
+            {
+                return NotFound();
+            }
+
+            return View(walker);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Walker walker)
+        {
+            try
+            {
+                _walkerRepo.UpdateWalker(walker);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(walker);
+            }
+        }
     }
 }

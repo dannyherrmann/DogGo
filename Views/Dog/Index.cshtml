@@ -1,10 +1,10 @@
-@model IEnumerable<DogGo.Models.Walker>
+@model IEnumerable<DogGo.Models.Dog>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Walkers</h1>
+<h1>Dogs</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -18,7 +18,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>Neighborhood</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Breed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ImageUrl)
             </th>
@@ -36,7 +44,13 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Neighborhood.Name)
+                    @Html.DisplayFor(modelItem => item.Owner.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
                 </td>
                 <td>
                     <img src="@item.ImageUrl" alt="avatar" />
