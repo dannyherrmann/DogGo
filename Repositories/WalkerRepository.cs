@@ -168,5 +168,47 @@ namespace DogGo.Repositories
                 }
             }
         }
+
+        public List<Walker> GetWalkersInNeighborhood(int neighborhoodId)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                    SELECT  Id, 
+                            [Name], 
+                            ImageUrl, 
+                            NeighborhoodId
+                    FROM Walker
+                    WHERE NeighborhoodId = @neighborhoodId";
+
+                    cmd.Parameters.AddWithValue("@neighborhoodId", neighborhoodId);
+
+                    var reader = cmd.ExecuteReader();
+
+                    List<Walker> walkers = new List<Walker>();
+
+                    while (reader.Read())
+                    {
+                        Walker walker = new Walker
+                        {
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            Name = DbUtils.GetString(reader, "Name"),
+                            ImageUrl = DbUtils.GetString(reader, "ImageUrl"),
+                            NeighborhoodId = DbUtils.GetInt(reader, "NeighborhoodId")
+                        };
+
+                        walkers.Add(walker);
+                    }
+
+                    reader.Close();
+
+                    return walkers;
+                }
+            }
+        }
     }
 }
