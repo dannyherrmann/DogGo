@@ -50,5 +50,56 @@ namespace DogGo.Controllers
 
             return View(dog);
         }
+
+        public ActionResult Delete(int id)
+        {
+            Dog dog = _dogRepo.GetDogById(id);
+
+            return View(dog);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, Dog dog)
+        {
+            try
+            {
+                _dogRepo.DeleteDog(dog.Id);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(dog);
+            }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            Dog dog = _dogRepo.GetDogById(id);
+
+            if (dog == null)
+            {
+                return NotFound();
+            }
+
+            return View(dog);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Dog dog)
+        {
+            try 
+            {
+                _dogRepo.UpdateDog(dog);
+
+                return RedirectToAction("Index");
+            }
+            catch(Exception ex)
+            {
+                return View(dog);
+            }
+        }
     }
 }
